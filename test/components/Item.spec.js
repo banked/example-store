@@ -6,7 +6,6 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe('Item', () => {
-
   let store
   let mutations
 
@@ -69,5 +68,4 @@ describe('Item', () => {
       image: 'https://example.com/image.png'
     })
   })
-
 })

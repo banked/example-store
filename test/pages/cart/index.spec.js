@@ -1,10 +1,10 @@
-import { mount} from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
+import axios from 'axios'
 import Masthead from '../../../components/Masthead.vue'
 import Item from '../../../components/Item.vue'
 import Index from '../../../pages/cart/index.vue'
-import axios from 'axios';
 
-jest.mock('axios');
+jest.mock('axios')
 
 const storeMock = {
   state: {
@@ -18,10 +18,9 @@ const storeMock = {
       }]
     }
   }
-};
+}
 
 describe('Index', () => {
-
   it('includes the correct sub-components', () => {
     expect(Index.components.Masthead).toEqual(Masthead)
     expect(Index.components.Item).toEqual(Item)
@@ -66,9 +65,9 @@ describe('Index', () => {
     expect(wrapper.find('.cart-total').text().trim()).toEqual('£33.50')
   })
 
-  it('redirect to checkout when button is clicked', async (done) => {
-    delete global.location;
-    global.location = { replace: jest.fn() };
+  it('redirect to checkout when button is clicked', (done) => {
+    delete global.location
+    global.location = { replace: jest.fn() }
     axios.post.mockResolvedValue({ url: 'https://example.com/checkout/' })
 
     const wrapper = mount(Index, {
@@ -92,7 +91,7 @@ describe('Index', () => {
     })
   })
 
-  it('should show an error when checkout request fails', async (done) => {
+  it('should show an error when checkout request fails', (done) => {
     axios.post.mockRejectedValue(new Error('Roh roh shaggy'))
     const wrapper = mount(Index, {
       mocks: {
@@ -131,7 +130,6 @@ describe('Index', () => {
       }
     })
 
-      expect(wrapper.find('.empty-cart').isVisible()).toBeTruthy()
+    expect(wrapper.find('.empty-cart').isVisible()).toBeTruthy()
   })
-
 })

@@ -6,7 +6,6 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe('Masthead', () => {
-
   it('renders a the cart value from the state store', () => {
     const wrapper = shallowMount(Masthead, {
       mocks: {
@@ -31,5 +30,4 @@ describe('Masthead', () => {
     })
     expect(wrapper.find('.cart-total').text().trim()).toEqual('Cart (£33.50)')
   })
-
 })

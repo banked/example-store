@@ -1,14 +1,14 @@
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const bodyParser = require('body-parser')
+const config = require('../nuxt.config.js')
 const apiRouter = require('./api')
-const bodyParser = require('body-parser');
+
 const app = express()
 
 require('dotenv').config()
 
-// Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
 async function start () {
@@ -24,7 +24,7 @@ async function start () {
     await builder.build()
   }
 
-  app.use(bodyParser.json());
+  app.use(bodyParser.json())
   app.use('/api/', apiRouter)
 
   // Give nuxt middleware to express

@@ -1,8 +1,7 @@
-import { mount} from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Success from '../../../pages/cart/success.vue'
 
 describe('Success', () => {
-
   it('should show a message to the user', () => {
     const wrapper = mount(Success, {
       mocks: {
@@ -20,5 +19,4 @@ describe('Success', () => {
     })
     expect(wrapper.find('.success-message').isVisible()).toBeTruthy()
   })
-
 })
