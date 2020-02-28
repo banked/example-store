@@ -7,10 +7,10 @@ describe('Products store', () => {
     expect(Array.isArray(store.list)).toBeTruthy();
     expect(store.list.length).toBe(3);
     expect(store.list[0]).toEqual({
-      name: 'A product name',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.',
-      amount: 23.2,
-      image: '/images/card-top.jpg'
+      name: 'Nike Free Flynit',
+      description: 'Ideal for runs up to 3 miles, the Nike Free RN Flyknit 3.0 delivers a lace-free design so you can slip in and hit your stride.',
+      amount: 110,
+      image: '/images/product-1.jpg'
     })
   })
 
