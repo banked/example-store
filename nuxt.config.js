@@ -45,7 +45,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
   /*
   ** Build configuration

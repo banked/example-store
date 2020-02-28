@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const axios = require('axios');
+const express = require('express')
+const router = express.Router()
+const axios = require('axios')
 
 const hydrateRequest = (body) => {
   return {
@@ -25,19 +25,19 @@ const hydrateRequest = (body) => {
 }
 
 /* GET image */
-router.post('/v1/checkout', async function(req, res) {
+router.post('/v1/checkout', async function (req, res) {
   try {
-    let bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
+    const bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
       headers: {
-        'PUBLISHABLE_API_KEY': process.env.BANKED_PUBLISHABLE_API_KEY
+        PUBLISHABLE_API_KEY: process.env.BANKED_PUBLISHABLE_API_KEY
       }
     })
     res.send({
       url: bankedResponse.url
     })
-  } catch(e) {
+  } catch (e) {
     res.sendStatus(500)
   }
-});
+})
 
-module.exports = router;
+module.exports = router

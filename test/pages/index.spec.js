@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import { shallowMount, createLocalVue, mount} from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Masthead from '../../components/Masthead.vue'
 import Product from '../../components/Product.vue'
 import Index from '../../pages/index.vue'
@@ -19,10 +19,9 @@ const storeMock = {
       }]
     }
   }
-};
+}
 
 describe('Index', () => {
-
   it('includes the correct sub-components', () => {
     expect(Index.components.Masthead).toEqual(Masthead)
     expect(Index.components.Product).toEqual(Product)
@@ -53,5 +52,4 @@ describe('Index', () => {
     })
     expect(wrapper.findAll('.product')).toHaveLength(3)
   })
-
 })
