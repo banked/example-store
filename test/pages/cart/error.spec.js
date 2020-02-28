@@ -1,5 +1,5 @@
 import { mount} from '@vue/test-utils'
-import Err from '../../../pages/cart/Error.vue'
+import Err from '../../../pages/cart/error.vue'
 
 describe('Error', () => {
 

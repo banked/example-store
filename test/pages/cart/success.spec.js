@@ -1,5 +1,5 @@
 import { mount} from '@vue/test-utils'
-import Success from '../../../pages/cart/Success.vue'
+import Success from '../../../pages/cart/success.vue'
 
 describe('Success', () => {
 

@@ -1,7 +1,7 @@
 import { mount} from '@vue/test-utils'
 import Masthead from '../../../components/Masthead.vue'
 import Item from '../../../components/Item.vue'
-import Index from '../../../pages/cart/Index.vue'
+import Index from '../../../pages/cart/index.vue'
 import axios from 'axios';
 
 jest.mock('axios');
