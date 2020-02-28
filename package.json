@@ -4,6 +4,9 @@
   "description": "An example storefront demonstrating the Banked API",
   "author": "Joe Pettersson",
   "private": true,
+  "engines": {
+    "node": "13.x"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
