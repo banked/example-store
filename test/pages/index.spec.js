@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import { shallowMount, createLocalVue, mount} from '@vue/test-utils'
 import Masthead from '../../components/Masthead.vue'
 import Product from '../../components/Product.vue'
-import Index from '../../pages/Index.vue'
+import Index from '../../pages/index.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
