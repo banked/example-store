@@ -59,5 +59,8 @@ module.exports = {
   },
   axios: {
     // proxyHeaders: false
-  }
+  },
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/api.js' }
+  ]
 }
