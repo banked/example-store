@@ -70,7 +70,7 @@ export default {
         const res = await axios.post('/api/v1/checkout', cart, {
           timeout: 1000
         })
-        global.location.replace(res.url)
+        global.location.replace(res.data.url)
       } catch (e) {
         this.error = e
       }
