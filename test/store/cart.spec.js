@@ -41,4 +41,22 @@ describe('Cart store', () => {
 
     expect(st.list.length).toBe(0)
   })
+
+  it('should apple a discount to items in the cart', () => {
+    const st = state()
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 22
+    })
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 10
+    })
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(32)
+
+    mutations.applyDiscount(st)
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(0.02)
+  })
 })
