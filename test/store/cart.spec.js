@@ -42,7 +42,7 @@ describe('Cart store', () => {
     expect(st.list.length).toBe(0)
   })
 
-  it('should apple a discount to items in the cart', () => {
+  it('should apply a discount to items in the cart', () => {
     const st = state()
     mutations.add(st, {
       foo: 'bar',
@@ -58,5 +58,45 @@ describe('Cart store', () => {
     mutations.applyDiscount(st)
 
     expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(0.02)
+  })
+
+  it('should remove a discount from items in the cart', () => {
+    const st = state()
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 22
+    })
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 10
+    })
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(32)
+
+    mutations.applyDiscount(st)
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(0.02)
+
+    mutations.removeDiscount(st)
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(32)
+  })
+
+  it('should have no effect if trying to remove a discount from a cart with no discount applid', () => {
+    const st = state()
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 22
+    })
+    mutations.add(st, {
+      foo: 'bar',
+      amount: 10
+    })
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(32)
+
+    mutations.removeDiscount(st)
+
+    expect(st.list.reduce((a, b) => a + b.amount, 0)).toBe(32)
   })
 })
