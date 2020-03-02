@@ -26,7 +26,7 @@ describe('Index', () => {
     expect(Index.components.Item).toEqual(Item)
   })
 
-  it('renders a the masthead', () => {
+  it('renders the masthead', () => {
     const wrapper = mount(Index, {
       mocks: {
         $store: storeMock
@@ -65,7 +65,7 @@ describe('Index', () => {
     expect(wrapper.find('.cart-total').text().trim()).toEqual('£33.50')
   })
 
-  it('redirect to checkout when button is clicked', (done) => {
+  it('redirects to checkout when button is clicked', (done) => {
     delete global.location
     global.location = { replace: jest.fn() }
     axios.post.mockResolvedValue({ url: 'https://example.com/checkout/' })
