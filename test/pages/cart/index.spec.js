@@ -79,7 +79,11 @@ describe('Index', () => {
   it('redirects to checkout when button is clicked', (done) => {
     delete global.location
     global.location = { replace: jest.fn() }
-    axios.post.mockResolvedValue({ url: 'https://example.com/checkout/' })
+    axios.post.mockResolvedValue({
+      data: {
+        url: 'https://example.com/checkout/'
+      }
+    })
 
     const wrapper = mount(Index, {
       stubs: {
