@@ -4,9 +4,9 @@
 
 ![](./static/images/example-store-screenshot.png)
 
-This dummy ecommerce store uses shoes as a product, it's primary purpose is to show how to implement Banked's hosted checkout, used for account to account payments.
+This dummy ecommerce store uses shoes as a product, it's purpose is to demonstrate an implementation of Banked's hosted checkout, used for account to account payments. You can add products to a basket and checkout using Banked's API.
 
-You can add products to a basket, and checkout using Banked's API. If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the stores redirects people to.
+If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the stores redirects people to and `./test/server/api.spec.js` for tests of the implemeentation.
 
 ## Build Setup
 
@@ -29,10 +29,10 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Deploying the store
 
-There are several environment variables that need to be set on the server to be able to make payments. You can add them to a `./.env` file and they'll be automatically pulled and used by the Express based server.
+There are several environment variables that need to be set on the server to be able to make payments. You can add them to the checked in `./.env` file and they'll be automatically pulled and used by the backend.
 
-* `BANKED_PUBLISHABLE_API_KEY` is Banked's publishable secret key, and is available from the Banked console. This key is only ever used on the server
-* `BASE_URL` is the base url for where this site is deployed (e.g. `https://example.com`) and is used for constructing the callback URL's Banked's checkout with redirect to
+* `BANKED_PUBLISHABLE_API_KEY` is Banked's publishable secret key, and is generated in the Banked console. This key is only ever used on the server
+* `BASE_URL` is the base url of where this site is deployed (e.g. `https://example.com`) and is used for constructing the callback URL's Banked's checkout will redirect to on success or error of the payment
 * `PAYEE_NAME` the name of the bank account payments will be made into
 * `ACCOUNT_NUMBER` is the bank account number the payments will be made into
 * `SORT_CODE` is the sort-code of the account the payments will be made into

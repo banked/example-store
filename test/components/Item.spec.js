@@ -48,7 +48,7 @@ describe('Item', () => {
     expect(productImage.attributes().title).toBe('Foobar Product')
   })
 
-  it('adds removes the item from the cart when the link is clicked', () => {
+  it('removes the item from the cart when the link is clicked', () => {
     const wrapper = shallowMount(Item, {
       propsData: {
         item: {

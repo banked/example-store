@@ -27,7 +27,7 @@ describe('Index', () => {
     expect(Index.components.Product).toEqual(Product)
   })
 
-  it('renders a the masthead', () => {
+  it('renders the masthead', () => {
     const wrapper = mount(Index, {
       mocks: {
         $store: storeMock
