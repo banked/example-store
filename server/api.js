@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const axios = require('axios')
-const console = require('consola');
+const consola = require('consola')
 
 const hydrateRequest = (body) => {
   return {
@@ -39,7 +39,9 @@ router.post('/v1/checkout', async function (req, res) {
     })
   } catch (e) {
     /* istanbul ignore next */
-    if (process.env.NODE_ENV !== 'test') consola.error(e)
+    if (process.env.NODE_ENV !== 'test') {
+      consola.error(e)
+    }
     res.sendStatus(500)
   }
 })
