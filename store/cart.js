@@ -18,5 +18,20 @@ export const mutations = {
   },
   remove (state, product) {
     state.list = state.list.filter(item => item.cartID !== product.cartID)
+  },
+  applyDiscount (state) {
+    state.list = state.list.map((item) => {
+      item._amount = item.amount
+      item.amount = 0.01
+      return item
+    })
+  },
+  removeDiscount (state) {
+    state.list = state.list.map((item) => {
+      if (item._amount) {
+        item.amount = item._amount
+      }
+      return item
+    })
   }
 }
