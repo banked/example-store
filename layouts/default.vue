@@ -32,6 +32,13 @@ footer {
   max-width: 1200px;
 }
 
+@media (min-width: 320px) and (max-width: 1024px) {
+  footer {
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+}
+
 a {
   text-decoration: underline
 }
