@@ -27,6 +27,7 @@ const hydrateRequest = (body) => {
 
 /* GET image */
 router.post('/v1/checkout', async function (req, res) {
+  console.log(req)
   try {
     const bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
       auth: {
