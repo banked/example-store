@@ -20,6 +20,9 @@
         <p class="text-3xl cart-total">
           {{ cartValue.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }}
         </p>
+        <p>
+          <input v-model="discountApplied" type="checkbox" name="discount" class="discount"> Apply discount
+        </p>
         <button class="btn btn-banked mt-4" @click="checkout(cart)">
           Checkout with Banked :
         </button>
@@ -40,7 +43,8 @@ export default {
   },
   data () {
     return {
-      error: null
+      error: null,
+      discountApplied: false
     }
   },
   computed: {
@@ -49,6 +53,15 @@ export default {
     },
     cartValue () {
       return this.$store.state.cart.list.reduce((a, b) => a + b.amount, 0)
+    }
+  },
+  watch: {
+    discountApplied (applyDiscount) {
+      if (applyDiscount === true) {
+        this.$store.commit('cart/applyDiscount')
+      } else {
+        this.$store.commit('cart/removeDiscount')
+      }
     }
   },
   methods: {
