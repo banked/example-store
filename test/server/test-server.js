@@ -7,7 +7,7 @@
 // allow us to test _just_ their implementation
 
 import express from 'express'
-import apiRouter  from '../../server/api'
+import apiRouter from '../../server/api'
 
 const app = express()
 
