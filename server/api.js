@@ -1,7 +1,9 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
 const axios = require('axios')
 const consola = require('consola')
+
+app.use(express.json())
 
 const hydrateRequest = (body) => {
   return {
@@ -25,9 +27,7 @@ const hydrateRequest = (body) => {
   }
 }
 
-/* GET image */
-router.post('/v1/checkout', async function (req, res) {
-  console.log(req)
+app.post('/', async function (req, res) {
   try {
     const bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
       auth: {
@@ -47,4 +47,7 @@ router.post('/v1/checkout', async function (req, res) {
   }
 })
 
-module.exports = router
+export default {
+  path: '/api/v1/checkout',
+  handler: app
+}

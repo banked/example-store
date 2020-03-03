@@ -61,6 +61,6 @@ module.exports = {
     // proxyHeaders: false
   },
   serverMiddleware: [
-    { path: '/api', handler: '~/server/api.js' }
+    '~/server/api'
   ]
 }
