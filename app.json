@@ -1,0 +1,32 @@
+{
+  "name": "Banked's Sample Store",
+  "description": "A simple Nuxt.js powered webstore that demonstrates how to implement Banked's hosted checkout",
+  "repository": "https://github.com/banked/example-store",
+  "website": "https://banked-example-store.herokuapp.com/",
+  "env": {
+    "BANKED_API_KEY": {
+      "description": "Your Banked API key generated in the Banked console",
+      "required": true
+    },
+    "BANKED_API_SECRET": {
+      "description": "The Banked API secret generated in the Banked console",
+      "required": true
+    },
+    "BASE_URL": {
+      "description": "The base url of the store, which is used to construct callback URL's Banked will direct to e.g. https://www.example.com/",
+      "required": true
+    },
+    "PAYEE_NAME": {
+      "description": "The name of the account holder where payments will be made e.g. 'Example Ltd.' or 'Lisa Frank",
+      "required": true
+    },
+    "ACCOUNT_NUMBER": {
+      "description": "The 8 digit account number for payments to be made into",
+      "required": true
+    },
+    "SORT_CODE": {
+      "description": "The 6 digit sort code for the bank account to be paid, with no hyhons",
+      "required": true
+    }
+  }
+}

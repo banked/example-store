@@ -1,6 +1,8 @@
 # 🛍 Example Store
 
-> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API that is currently [deployed to Heroku](https://banked-example-store.herokuapp.com/)
 
 ![](./static/images/example-store-screenshot.png)
 
@@ -28,6 +30,10 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 ## Deploying the store
+
+The store is automatically deployed to [Heroku](https://banked-example-store.herokuapp.com/) when a commit is pushed to the master branch.
+
+### Environment variables
 
 There are several environment variables that need to be set on the server to be able to make payments. You can add them to the checked in `./.env` file and they'll be automatically pulled and used by the backend.
 
