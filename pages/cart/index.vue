@@ -23,7 +23,7 @@
         <p>
           <input v-model="discountApplied" type="checkbox" name="discount" class="discount"> Apply discount
         </p>
-        <button class="btn btn-banked mt-4" @click="checkout(cart)">
+        <button class="btn btn-banked mt-4" @click="checkout(cart, $event)">
           Checkout with Banked :
         </button>
       </div>
@@ -65,10 +65,11 @@ export default {
     }
   },
   methods: {
-    async checkout (cart) {
+    async checkout (cart, e) {
+      e.preventDefault()
       try {
         const res = await axios.post('/api/v1/checkout', cart, {
-          timeout: 1000
+          timeout: 10000
         })
         global.location.replace(res.data.url)
       } catch (e) {

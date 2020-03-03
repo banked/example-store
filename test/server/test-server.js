@@ -6,14 +6,14 @@
 // have this very simple express server that just mounts our routes and
 // allow us to test _just_ their implementation
 
-const express = require('express')
-const apiRouter = require('../../server/api')
+import express from 'express'
+import apiRouter from '../../server/api'
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/', apiRouter)
+app.use(apiRouter.path, apiRouter.handler)
 
 module.exports = app
