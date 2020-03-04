@@ -94,7 +94,7 @@ describe('Index', () => {
       localVue
     })
 
-    wrapper.find('button').trigger('click')
+    wrapper.find('.btn-banked').trigger('click')
 
     wrapper.vm.$nextTick(() => {
       setTimeout(() => {
@@ -116,7 +116,7 @@ describe('Index', () => {
       localVue
     })
 
-    wrapper.find('button').trigger('click')
+    wrapper.find('.btn-banked').trigger('click')
 
     wrapper.vm.$nextTick(() => {
       setTimeout(() => {

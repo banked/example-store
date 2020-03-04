@@ -23,9 +23,15 @@
         <p>
           <input v-model="discountApplied" type="checkbox" name="discount" class="discount"> Apply discount
         </p>
-        <button class="btn btn-banked mt-4" @click="checkout(cart, $event)">
-          Checkout with Banked :
+        <button class="btn btn-cc mt-4">
+          Checkout
         </button>
+        <div class="p-3 mt-4 bg-teal-200 rounded inline-block">
+          <span class="text-sm block text-center text-teal-600 font-bold">Pay with Banked and get free shipping</span>
+          <button class="btn btn-banked mt-2" @click="checkout(cart, $event)">
+            Checkout with Banked :
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -115,6 +121,11 @@ export default {
 .btn-banked {
   @apply text-white text-xl;
   background: #000;
+}
+.btn-cc {
+  @apply text-xl;
+  background: #ccc;
+  display: block
 }
 .btn-banked:hover {
   background: #2d2d2d;
