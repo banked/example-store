@@ -1,6 +1,6 @@
 # 🛍 Example Store
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/banked/example-store)
 
 > A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API that is currently [deployed to Heroku](https://banked-example-store.herokuapp.com/)
 
