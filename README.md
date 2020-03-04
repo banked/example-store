@@ -42,3 +42,11 @@ There are several environment variables that need to be set on the server to be 
 * `PAYEE_NAME` the name of the bank account payments will be made into
 * `ACCOUNT_NUMBER` is the bank account number the payments will be made into
 * `SORT_CODE` is the sort-code of the account the payments will be made into
+
+## 📸 Photo credits
+
+All of the product images used in the demo store are sourced from [Unsplash](https://unsplash.com/). The individual image credits are:
+
+* [REVOLT](https://unsplash.com/@revolt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) for the [photo of the red sneaker](https://unsplash.com/photos/164_6wVEHfI)
+* [Maksim Larin](https://unsplash.com/@maksimcul8r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) for the [photo of the tan sneaker](https://unsplash.com/photos/NOpsC3nWTzY)
+* [MNZ](https://unsplash.com/@mnzoutfits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) for the [photo of the white sneakers](https://unsplash.com/photos/BeClz11lyXY)
