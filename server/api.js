@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
-const axios = require('axios')
 const consola = require('consola')
+const Banked = require('@banked/node')
 
 app.use(express.json())
+
+const banked = new Banked({
+  api_key: process.env.BANKED_API_KEY,
+  secret_key: process.env.BANKED_API_SECRET
+})
 
 const hydrateRequest = (body) => {
   return {
@@ -29,12 +34,7 @@ const hydrateRequest = (body) => {
 
 app.post('/', async function (req, res) {
   try {
-    const bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
-      auth: {
-        username: process.env.BANKED_API_KEY,
-        password: process.env.BANKED_API_SECRET
-      }
-    })
+    const bankedResponse = await banked.payments.create(hydrateRequest(req.body))
     res.send({
       url: bankedResponse.data.url
     })
