@@ -2,13 +2,13 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/banked/example-store)
 
-> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API that is currently [deployed to Heroku](https://banked-example-store.herokuapp.com/)
+> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API (using the [banked-node](https://github.com/banked/banked-node) library) that is currently [deployed to Heroku](https://banked-example-store.herokuapp.com/)
 
 ![](./static/images/example-store-screenshot.png)
 
 This dummy ecommerce store uses shoes as a product, it's purpose is to demonstrate an implementation of Banked's hosted checkout, used for account to account payments. You can add products to a basket and checkout using Banked's API.
 
-If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the stores redirects people to and `./test/server/api.spec.js` for tests of the implemeentation.
+If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the front-end redirects people to, and `./test/server/api.spec.js` for tests of the implemeentation.
 
 ## Build Setup
 
