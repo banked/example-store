@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@banked/node": "0.0.5",
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/pwa": "^3.0.0-0",
     "body-parser": "^1.19.0",
