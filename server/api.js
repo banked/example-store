@@ -19,6 +19,9 @@ const hydrateRequest = (body) => {
         quantity: item.quantity
       }
     }),
+    rewards: [{
+			type: 'avios'
+		}],
     payee: {
       name: process.env.PAYEE_NAME,
       account_number: process.env.ACCOUNT_NUMBER,
