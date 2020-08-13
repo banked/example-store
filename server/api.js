@@ -29,7 +29,7 @@ const hydrateRequest = (body) => {
 
 app.post('/', async function (req, res) {
   try {
-    const bankedResponse = await axios.post('https://banked.me/api/v2/payment_sessions', hydrateRequest(req.body), {
+    const bankedResponse = await axios.post('https://api.banked.com/v2/payment_sessions', hydrateRequest(req.body), {
       auth: {
         username: process.env.BANKED_API_KEY,
         password: process.env.BANKED_API_SECRET
@@ -39,10 +39,6 @@ app.post('/', async function (req, res) {
       url: bankedResponse.data.url
     })
   } catch (e) {
-    /* istanbul ignore next */
-    if (process.env.NODE_ENV !== 'test') {
-      consola.error(e)
-    }
     res.sendStatus(500)
   }
 })
