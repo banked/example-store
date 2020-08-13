@@ -152,5 +152,4 @@ describe('Index', () => {
 
     expect(wrapper.find('.empty-cart').isVisible()).toBeTruthy()
   })
-
 })

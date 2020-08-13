@@ -64,7 +64,7 @@ describe('API', () => {
         quantity: 1
       }],
       rewards: [{
-        type: "avios"
+        type: 'avios'
       }],
       payee: {
         name: 'Example Store Ltd.',

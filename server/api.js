@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
-const consola = require('consola')
 
 app.use(express.json())
 
@@ -20,8 +19,8 @@ const hydrateRequest = (body) => {
       }
     }),
     rewards: [{
-			type: 'avios'
-		}],
+      type: 'avios'
+    }],
     payee: {
       name: process.env.PAYEE_NAME,
       account_number: process.env.ACCOUNT_NUMBER,
