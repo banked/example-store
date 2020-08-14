@@ -1,7 +1,7 @@
 <template>
   <div>
     <masthead />
-    <div class="cart-container">
+    <div class="cart-container items-start">
       <div class="w-3/5">
         <div v-if="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-8 checkout-error" role="alert">
           <strong class="font-bold">Something went wrong!</strong>
@@ -27,7 +27,9 @@
           <img id="avios-logo" src="/images/avios.png" alt="Avios">
           <span class="text-gray-800 ml-1">Earn <span class="font-bold">{{ avios }} Avios</span> with this purchase</span>
         </div>
-        <img id="banked-btn" src="/images/banked-button.svg" alt="Checkout with banked" class="m-auto mb-6 mt-6" @click="checkout(cart, $event)">
+        <a id="banked-btn" href="#" class="m-auto mb-6 mt-6 block" @click="checkout(cart, $event)">
+          <img src="/images/banked-button.svg" alt="Checkout with banked">
+        </a>
       </div>
     </div>
   </div>
@@ -133,7 +135,7 @@ export default {
 }
 
 #banked-btn {
-  cursor: pointer;
+  width: 320px;
 }
 #banked-btn:hover {
   opacity: 0.9;
