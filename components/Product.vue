@@ -38,7 +38,7 @@ export default {
 
 <style>
 .product {
-    margin-right: 20px
+    margin-right: 24px
 }
 .product:last-of-type {
     margin-right: 0px;
