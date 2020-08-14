@@ -4,9 +4,11 @@
     <footer class="clearfix">
       <div class="float-left">
         Banked.com example store, <a href="https://github.com/banked/example-store">source code</a> released under an MIT license
+        <p>Powered by Banked</p>
       </div>
       <div class="float-right">
         <a href="https://banked.com">Banked.com</a> |
+        <a href="https://banked.com/avios">Avios</a> |
         <a href="https://developer.banked.com">Developer Documentation</a> |
         <a href="https://github.com/banked/example-store#-photo-credits">Photo Credits</a>
       </div>
