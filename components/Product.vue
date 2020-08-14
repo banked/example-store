@@ -12,7 +12,7 @@
         {{ product.amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }}
       </p>
     </div>
-    <div class="px-6 py-4">
+    <div class="px-6 pt-4 pb-6">
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="addToCart(product)">
         Add to cart
       </button>
@@ -38,7 +38,7 @@ export default {
 
 <style>
 .product {
-    margin-right: 20px
+    margin-right: 24px
 }
 .product:last-of-type {
     margin-right: 0px;

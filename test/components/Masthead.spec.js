@@ -28,6 +28,6 @@ describe('Masthead', () => {
       },
       localVue
     })
-    expect(wrapper.find('.cart-total').text().trim()).toEqual('Cart (£33.50)')
+    expect(wrapper.find('.cart-total').text().trim()).toEqual('Checkout (£33.50)')
   })
 })

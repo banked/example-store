@@ -1,10 +1,11 @@
 <template>
   <header class="clearfix">
     <nuxt-link to="/" class="float-left">
-      Example Store
+      Banked Example Store
     </nuxt-link>
-    <nuxt-link to="/cart" class="float-right cart-total">
-      Cart ({{ cartValue.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }})
+    <nuxt-link to="/cart" class="float-right cart-total no-underline hover:opacity-75">
+      <img id="cart-icon" src="/images/cart.svg" alt="Cart">
+      Checkout ({{ cartValue.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }})
     </nuxt-link>
   </header>
 </template>
@@ -21,8 +22,13 @@ export default {
 </script>
 
 <style>
+#cart-icon {
+  width: 16px;
+  display: inline-block;
+  margin-top: -4px;
+}
 header {
-  margin: 50px auto;
+  margin: 50px auto 24px;
   max-width: 1200px;
 }
 @media (min-width: 320px) and (max-width: 1024px) {
