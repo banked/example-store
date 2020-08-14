@@ -15,23 +15,19 @@
 
         <item v-for="item in cart" :key="item.cartID" :item="item" />
       </div>
-      <div class="w-2/5 pl-16">
-        <p>Cart total</p>
-        <p class="text-3xl cart-total">
+      <div id="checkout" class="w-2/5 ml-16 border border-gray-400 rounded">
+        <p class="p-4 pb-0">
+          Cart total
+        </p>
+        <p class="text-3xl cart-total p-4 pt-0">
           {{ cartValue.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }}
         </p>
-        <p>
-          <input v-model="discountApplied" type="checkbox" name="discount" class="discount"> Apply discount
-        </p>
-        <button class="btn btn-cc mt-4">
-          Checkout
-        </button>
-        <div class="p-3 mt-4 bg-teal-200 rounded inline-block">
-          <span class="text-sm block text-center text-teal-600 font-bold">Pay with Banked and get free shipping</span>
-          <button class="btn btn-banked mt-2" @click="checkout(cart, $event)">
-            Checkout with Banked :
-          </button>
+
+        <div id="avios" class="p-3 bg-gray-200 inline-block w-full border-gray-400 border border-l-0 border-r-0">
+          <img id="avios-logo" src="/images/avios.png" alt="Avios">
+          <span class="text-gray-800 ml-1">Earn <span class="font-bold">{{ avios }} Avios</span> with this purchase</span>
         </div>
+        <img id="banked-btn" src="/images/banked-button.svg" alt="Checkout with banked" class="m-auto mb-6 mt-6" @click="checkout(cart, $event)">
       </div>
     </div>
   </div>
@@ -49,8 +45,7 @@ export default {
   },
   data () {
     return {
-      error: null,
-      discountApplied: false
+      error: null
     }
   },
   computed: {
@@ -59,15 +54,9 @@ export default {
     },
     cartValue () {
       return this.$store.state.cart.list.reduce((a, b) => a + b.amount, 0)
-    }
-  },
-  watch: {
-    discountApplied (applyDiscount) {
-      if (applyDiscount === true) {
-        this.$store.commit('cart/applyDiscount')
-      } else {
-        this.$store.commit('cart/removeDiscount')
-      }
+    },
+    avios () {
+      return Math.ceil(this.cartValue * 0.8)
     }
   },
   methods: {
@@ -93,6 +82,11 @@ export default {
   display: flex;
 }
 
+#avios-logo {
+  display: inline;
+  width: 30px;
+}
+
 @media (min-width: 320px) and (max-width: 1024px) {
   .cart-container {
     display: block;
@@ -113,6 +107,13 @@ export default {
   .empty-cart {
     margin-bottom: 30px;
   }
+  #checkout {
+    margin-top: 30px;
+  }
+  #avios,
+  #banked-btn {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -129,6 +130,13 @@ export default {
 }
 .btn-banked:hover {
   background: #2d2d2d;
+}
+
+#banked-btn {
+  cursor: pointer;
+}
+#banked-btn:hover {
+  opacity: 0.9;
 }
 
 </style>

@@ -15,12 +15,7 @@ describe('Index', () => {
   let mutations
 
   beforeEach(() => {
-    mutations = {
-      'cart/applyDiscount': jest.fn(),
-      'cart/removeDiscount': jest.fn()
-    }
     store = new Vuex.Store({
-      mutations,
       state: {
         cart: {
           list: [{
@@ -73,6 +68,18 @@ describe('Index', () => {
       store,
       localVue
     })
+    expect(wrapper.find('#avios').text().trim()).toEqual('Earn 27 Avios with this purchase')
+  })
+
+  it('renders the Avios total', () => {
+    const wrapper = mount(Index, {
+      stubs: {
+        Masthead: "<div class='masthead'></div>",
+        Item: "<div class='item'></div>"
+      },
+      store,
+      localVue
+    })
     expect(wrapper.find('.cart-total').text().trim()).toEqual('£33.50')
   })
 
@@ -94,7 +101,7 @@ describe('Index', () => {
       localVue
     })
 
-    wrapper.find('.btn-banked').trigger('click')
+    wrapper.find('#banked-btn').trigger('click')
 
     wrapper.vm.$nextTick(() => {
       setTimeout(() => {
@@ -116,7 +123,7 @@ describe('Index', () => {
       localVue
     })
 
-    wrapper.find('.btn-banked').trigger('click')
+    wrapper.find('#banked-btn').trigger('click')
 
     wrapper.vm.$nextTick(() => {
       setTimeout(() => {
@@ -144,35 +151,5 @@ describe('Index', () => {
     })
 
     expect(wrapper.find('.empty-cart').isVisible()).toBeTruthy()
-  })
-
-  it('apply and remove a discount when checkbox is clicked', (done) => {
-    const wrapper = mount(Index, {
-      stubs: {
-        Masthead: "<div class='masthead'></div>",
-        Item: "<div class='item'></div>"
-      },
-      store,
-      localVue
-    })
-    expect(wrapper.find('.cart-total').text().trim()).toEqual('£33.50')
-
-    const input = wrapper.find('.discount')
-
-    input.setChecked(true)
-
-    wrapper.vm.$nextTick(() => {
-      setTimeout(() => {
-        expect(mutations['cart/applyDiscount']).toBeCalled()
-        input.setChecked(false)
-
-        wrapper.vm.$nextTick(() => {
-          setTimeout(() => {
-            expect(mutations['cart/removeDiscount']).toBeCalled()
-            done()
-          }, 1)
-        })
-      }, 1)
-    })
   })
 })
