@@ -6,7 +6,7 @@ export const state = () => ({
     image: '/images/product-1.jpg'
   }, {
     name: 'Nike Air Force 1',
-    description: 'The Nike Air Force 1 Shadow pays homage to the women who are setting an example for the next generation by being forces of change.',
+    description: 'The Nike Air Force 1 pays homage to the women who are setting an example for the next generation by being forces of change.',
     amount: 120,
     image: '/images/product-2.jpg'
   }, {

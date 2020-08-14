@@ -52,7 +52,7 @@ describe('API', () => {
     }))
     const res = await request(testServer).post('/api/v1/checkout').send(getCartContents(1)).set('Accept', 'application/json')
     expect(res.statusCode).toBe(200)
-    expect(axios.post).toHaveBeenCalledWith('https://banked.me/api/v2/payment_sessions', {
+    expect(axios.post).toHaveBeenCalledWith('https://api.banked.com/v2/payment_sessions', {
       reference: 'Banked Demo',
       success_url: 'https://someurl.com/cart/success',
       error_url: 'https://someurl.com/cart/error',
@@ -62,6 +62,9 @@ describe('API', () => {
         currency: 'GBP',
         description: 'A cart item description',
         quantity: 1
+      }],
+      rewards: [{
+        type: 'avios'
       }],
       payee: {
         name: 'Example Store Ltd.',
