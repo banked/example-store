@@ -28,7 +28,7 @@
           <span class="text-gray-800 ml-1">Earn <span class="font-bold">{{ avios }} Avios</span> with this purchase</span>
         </div>
         <a id="banked-btn" href="#" class="m-auto mb-6 mt-6 block" @click="checkout(cart, $event)">
-          <img src="/images/banked-button.svg" alt="Checkout with banked">
+          <img :src="`images/${ mode }-button.svg`" alt="Checkout">
         </a>
       </div>
     </div>
@@ -47,7 +47,8 @@ export default {
   },
   data () {
     return {
-      error: null
+      error: null,
+      mode: 'default'
     }
   },
   computed: {
@@ -60,6 +61,11 @@ export default {
     avios () {
       return Math.ceil(this.cartValue * 0.8)
     }
+  },
+  created () {
+    this.$nuxt.$on('mode', (data) => {
+      this.mode = data
+    })
   },
   methods: {
     async checkout (cart, e) {
