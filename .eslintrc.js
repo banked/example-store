@@ -13,7 +13,6 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'nuxt/no-cjs-in-config': 'off',
-    'nuxt/no-globals-in-created': 'off'
+    'nuxt/no-cjs-in-config': 'off'
   }
 }
