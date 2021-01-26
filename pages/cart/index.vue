@@ -63,9 +63,11 @@ export default {
     }
   },
   created () {
-    this.$nuxt.$on('mode', (data) => {
-      this.mode = data
-    })
+    if (this.$nuxt) {
+      this.$nuxt.$on('mode', (data) => {
+        this.mode = data
+      })
+    }
   },
   methods: {
     async checkout (cart, e) {
