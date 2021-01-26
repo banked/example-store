@@ -25,7 +25,13 @@ describe('Index', () => {
           }, {
             amount: 11
           }]
+        },
+        mode: {
+          brand: 'default'
         }
+      },
+      mutations: {
+        'mode/update': jest.fn()
       }
     })
   })
@@ -144,6 +150,9 @@ describe('Index', () => {
         state: {
           cart: {
             list: []
+          },
+          mode: {
+            brand: 'default'
           }
         }
       }),
@@ -151,5 +160,57 @@ describe('Index', () => {
     })
 
     expect(wrapper.find('.empty-cart').isVisible()).toBeTruthy()
+  })
+
+  it('renders the default button', () => {
+    const wrapper = mount(Index, {
+      stubs: {
+        Masthead: "<div class='masthead'></div>",
+        Item: "<div class='item'></div>"
+      },
+      store,
+      localVue
+    })
+    expect(wrapper.find('#banked-btn img').attributes('src').trim()).toEqual('images/default-button.svg')
+  })
+
+  it('renders the the correct button when state is updated', async (done) => {
+    const state = {
+      cart: {
+        list: [{
+          amount: 10
+        }, {
+          amount: 12.50
+        }, {
+          amount: 11
+        }]
+      },
+      mode: {
+        brand: 'default'
+      }
+    }
+    const wrapper = mount(Index, {
+      stubs: {
+        Masthead: "<div class='masthead'></div>",
+        Item: "<div class='item'></div>"
+      },
+      store: new Vuex.Store({
+        state,
+        mutations: {
+          'mode/update': (state, newVal) => {
+            state.mode.brand = newVal
+          }
+        }
+      }),
+      localVue
+    })
+    const options = wrapper.find('select').findAll('option')
+    await options.at(1).setSelected()
+    wrapper.vm.$nextTick(() => {
+      setTimeout(() => {
+        expect(wrapper.find('#banked-btn img').attributes('src').trim()).toEqual('images/treepay-button.svg')
+        done()
+      }, 1)
+    })
   })
 })
