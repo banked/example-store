@@ -146,5 +146,9 @@ export default {
 #banked-btn:hover {
   opacity: 0.9;
 }
+#banked-btn img {
+  display: block;
+  margin: 0 auto;
+}
 
 </style>
