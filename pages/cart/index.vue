@@ -18,6 +18,14 @@
       <div id="checkout" class="w-2/5 ml-16 border border-gray-400 rounded">
         <p class="p-4 pb-0">
           Cart total
+          <select id="mode" v-model="mode" name="mode">
+            <option value="default" selected>
+              Default
+            </option>
+            <option value="treepay">
+              TreePay
+            </option>
+          </select>
         </p>
         <p class="text-3xl cart-total p-4 pt-0">
           {{ cartValue.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) }}
@@ -47,8 +55,7 @@ export default {
   },
   data () {
     return {
-      error: null,
-      mode: 'default'
+      error: null
     }
   },
   computed: {
@@ -60,13 +67,14 @@ export default {
     },
     avios () {
       return Math.ceil(this.cartValue * 0.8)
-    }
-  },
-  created () {
-    if (this.$nuxt) {
-      this.$nuxt.$on('mode', (data) => {
-        this.mode = data
-      })
+    },
+    mode: {
+      get () {
+        return this.$store.state.mode.brand
+      },
+      set (val) {
+        this.$store.commit('mode/update', val)
+      }
     }
   },
   methods: {

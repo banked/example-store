@@ -11,33 +11,10 @@
         <a href="https://banked.com/avios">Avios</a> |
         <a href="https://developer.banked.com">Developer Documentation</a> |
         <a href="https://github.com/banked/example-store#-photo-credits">Photo Credits</a>
-        <select id="mode" v-model="mode" name="mode">
-          <option value="default" selected>
-            Default
-          </option>
-          <option value="treepay">
-            TreePay
-          </option>
-        </select>
       </div>
     </footer>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      mode: 'default'
-    }
-  },
-  watch: {
-    mode (newValue) {
-      this.$nuxt.$emit('mode', newValue)
-    }
-  }
-}
-</script>
 
 <style>
 html {
