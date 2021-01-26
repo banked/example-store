@@ -25,6 +25,9 @@ describe('Index', () => {
           }, {
             amount: 11
           }]
+        },
+        mode: {
+          brand: 'default'
         }
       }
     })
@@ -144,6 +147,9 @@ describe('Index', () => {
         state: {
           cart: {
             list: []
+          },
+          mode: {
+            brand: 'default'
           }
         }
       }),
