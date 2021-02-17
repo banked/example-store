@@ -1,8 +1,8 @@
 # 🛍 Example Store
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/banked/example-store)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/banked/example-store/tree/exampleStoreBase)
 
-> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API that is currently [deployed to Heroku](https://banked-example-store.herokuapp.com/)
+> A [Nuxt.js](https://nuxtjs.org/) powered example storefront demonstrating the Banked API that is currently [deployed to Heroku](https://banked-demo-checkout.herokuapp.com/)
 
 ![](./static/images/example-store-screenshot.png)
 
@@ -28,10 +28,6 @@ $ npm run generate
 ```
 
 For detailed guide on how things fit together, check out the [Nuxt.js docs](https://nuxtjs.org).
-
-## Deploying the store
-
-The store is automatically deployed to [Heroku](https://banked-example-store.herokuapp.com/) when a commit is pushed to the master branch.
 
 ### Environment variables
 
