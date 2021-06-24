@@ -2,7 +2,7 @@
   "name": "Banked's Sample Store",
   "description": "A simple Nuxt.js powered webstore that demonstrates how to implement Banked's hosted checkout",
   "repository": "https://github.com/banked/example-store",
-  "website": "https://banked-example-store.herokuapp.com/",
+  "website": "https://store.banked-demo.app/",
   "env": {
     "BANKED_API_KEY": {
       "description": "Your Banked API key generated in the Banked console",

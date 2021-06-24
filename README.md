@@ -31,7 +31,7 @@ For detailed guide on how things fit together, check out the [Nuxt.js docs](http
 
 ## Deploying the store
 
-The store is automatically deployed to [Heroku](https://banked-example-store.herokuapp.com/) when a commit is pushed to the master branch.
+The store is automatically deployed to [Heroku](https://store.banked-demo.app/) when a commit is pushed to the master branch.
 
 ### Environment variables
 
