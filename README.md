@@ -8,7 +8,7 @@
 
 This dummy ecommerce store uses shoes as a product, it's purpose is to demonstrate an implementation of Banked's hosted checkout, used for account to account payments. You can add products to a basket and checkout using Banked's API.
 
-If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the stores redirects people to and `./test/server/api.spec.js` for tests of the implementation.
+If you want to see the Banked specific parts checkout `./server/api.js` for creating the checkout URL on the backend that the stores redirects people to and `./test/server/api.spec.js` for tests of the implementation. 
 
 ## Build Setup
 
